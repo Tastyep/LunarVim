@@ -132,11 +132,10 @@ function M.get_style(style)
 end
 
 function M.update()
-  local config = lvim.builtin.lualine
+  local config = lvim.builtin.lualine.config
   local style = M.get_style(config.style)
 
-  lvim.builtin.lualine = {
-    active = true,
+  lvim.builtin.lualine.config = {
     style = style.style,
     options = {
       icons_enabled = config.options.icons_enabled or style.options.icons_enabled,
